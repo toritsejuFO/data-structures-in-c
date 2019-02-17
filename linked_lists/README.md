@@ -2,7 +2,7 @@
 
 ## How to compile
 * Inside the root project directory
-* Run `cd linked-list`
+* Run `cd linked-list/src`
 * Run `make`
 
 ## How to run
