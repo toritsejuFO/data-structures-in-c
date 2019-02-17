@@ -6,18 +6,15 @@
 void printList( ListNodePtr currentPtr )
 {
   if ( currentPtr == NULL ) {
-    printf("List is empty");
+    printf("List is empty.\n");
   }
-  else {
-    printf("HEAD-->");
+  printf("HEAD-->");
 
-    while ( currentPtr != NULL ) {
-      printf("%d-->", currentPtr->data);
-      currentPtr = currentPtr->nextPtr;
-    }
-
-    printf("NULL\n");
+  while ( currentPtr != NULL ) {
+    printf("%d-->", currentPtr->data);
+    currentPtr = currentPtr->nextPtr;
   }
 
+  printf("NULL\n");
 }
 
