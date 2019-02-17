@@ -2,21 +2,13 @@
 
 ## How to compile
 * Inside the root project directory
-* Run ```bash
-cd linked-list
-```
-* Run ```bash
-make
-```
+* Run `cd linked-list`
+* Run `make`
 
 ## How to run
-* Run ```bash
-./main
-```
+* Run `./main`
 
 ## Clean up
-* Run ```bash
-make clean
-``` to remove previously built object files
+* Run `make clean` to remove previously built object files
 
 Edit ~Makefile~ to change name of execuatble or compilation process and re-run
