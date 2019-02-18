@@ -12,6 +12,7 @@ struct listNode {
 typedef struct listNode ListNode;
 typedef struct listNode *ListNodePtr;
 
+void insert( ListNodePtr *headPtr, long value );
 void printList( ListNodePtr currentPtr );
 
 #endif // LINKED_LIST_H
