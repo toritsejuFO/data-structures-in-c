@@ -3,7 +3,7 @@
 
 #include "../include/linked_list.h"
 
-void insert( ListNodePtr *headPtr, int value )
+void insert( ListNodePtr *headPtr, long value )
 {
   /* Create list walker */
   ListNodePtr previousPtr = NULL;
