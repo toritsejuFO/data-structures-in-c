@@ -3,7 +3,7 @@
 
 #include "../include/linked_list.h"
 
-void insert( ListNodePtr *headPtr, long value )
+void insertItem( ListNodePtr *headPtr, int value )
 {
   /* Create list walker */
   ListNodePtr previousPtr = NULL;
@@ -34,6 +34,8 @@ void insert( ListNodePtr *headPtr, long value )
       newNode->nextPtr = currentPtr;
       previousPtr->nextPtr = newNode;
     }
+
+    printf("Inserted\n");
   }
   else {
     printf("\nUnable to to allocate memory for insertion. Free memory space\n");

@@ -7,7 +7,7 @@ ODIR=obj
 _DEPS=linked_list.h
 DEPS=$(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ=main.o print_list.o insert.o
+_OBJ=main.o print_list.o insert.o delete.o
 OBJ=$(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
