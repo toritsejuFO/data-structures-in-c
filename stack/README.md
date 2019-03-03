@@ -1,4 +1,5 @@
-# The linked list data structure
+# The stack data structure
+Stacks are implemented with linked nodes underneath the hood, much like linked_list, major difference is the LIFO principle of stack i.e where push(insert) and pop(delete) operations can happen. 
 
 ## How to compile
 * Inside the root project directory
