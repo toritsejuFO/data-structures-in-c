@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
-#include <ctype.h>
 
 #define PUSH 1
 #define POP 2
@@ -18,7 +17,7 @@ int main ( int argc, char * argv[] )
 {
   int option = 0;
   int successful_option_reads, successful_value_reads;
-  long to_push;
+  long to_push, popped_value;
   StackNodePtr head = NULL;
 
   do {
@@ -54,7 +53,16 @@ int main ( int argc, char * argv[] )
         break;
       
       case POP :
-        printf("\nPopping %ld from the stack...\n", popItem(&head));
+        popped_value = popItem(&head);
+        /*
+        * Pushing only allows INTEGERS. Hence if we get +1 above that,
+        * Which is what 'popItem' will return incase of an a NULL headPtr,
+        * Which is also a LONG, we then know that the stack is empty.
+        */
+        if ( popped_value != (INT_MAX + 1) ) {
+          printf("\nPopping %ld from the stack...\n", popped_value);
+          printf("Popped\n");
+        }
         break;
 
       case PRINTSTACK :
