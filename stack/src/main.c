@@ -53,9 +53,9 @@ int main ( int argc, char * argv[] )
         }
         break;
       
-      case POP :
-        printf("\nPopping %ld from the stack...\n", popItem(&head));
-        break;
+      // case POP :
+      //   printf("\nPopping %ld from the stack...\n", popItem(&head));
+      //   break;
 
       case PRINTSTACK :
         printf("\n");
