@@ -6,7 +6,8 @@
 #define ENQUEUE 1
 #define DEQUEUE 2
 #define PRINTQUEUE 3
-#define QUIT 4
+#define PRINTMENU 4
+#define QUIT 5
 
 #include "../include/queue.h"
 
@@ -20,8 +21,10 @@ int main ( int argc, char * argv[] )
   long to_enqueue, dequeued_value;
   QueueNodePtr head = NULL, tail = NULL;
 
+  /* Print menu on first start of program */
+  showMenu();
+
   do {
-    showMenu();
     printf("Enter option : ");
     successful_option_reads = scanf("%d", &option);
 
@@ -50,6 +53,9 @@ int main ( int argc, char * argv[] )
           printf("\nEnqueueing %ld into queue...\n", to_enqueue);
           enqueueItem(&head, &tail, (int) to_enqueue); 
         }
+        printf("\n");
+        printQueue(head);
+        printf("\n");
         break;
       
       case DEQUEUE :
@@ -63,11 +69,19 @@ int main ( int argc, char * argv[] )
           printf("\nDequeueing %ld from the queue...\n", dequeued_value);
           printf("Dequeued\n");
         }
+        printf("\n");
+        printQueue(head);
+        printf("\n");
         break;
 
       case PRINTQUEUE :
         printf("\n");
         printQueue(head);
+        printf("\n");
+        break;
+
+      case PRINTMENU :
+        showMenu();
         break;
 
       case QUIT:
@@ -89,7 +103,8 @@ void showMenu () {
   printf("\n1. Press 1 to enqueue into the queue\n");
   printf("2. Press 2 to dequeue from the queue\n");
   printf("3. Press 3 to print the queue\n");
-  printf("4. Press 4 to quit\n\n");
+  printf("4. Press 4 to show this menu\n");
+  printf("5. Press 5 to quit\n\n");
 }
 
 int failSafe () {
