@@ -1,6 +1,6 @@
 # Data Structures In C
 
-Built from scratch using basic C contructs, this project showcases how to implement multiple data structures in the C programming language, and is intermediately heavy on pointers.
+Built from scratch using basic C constructs, this project showcases how to implement multiple data structures in the C programming language, and is intermediately heavy on pointers.
 
 Although the repo comes with the object files pre-built and also the executable binary files, instructions on how to compile and run each program are in the readme files of each folder representing each data structure.
 
