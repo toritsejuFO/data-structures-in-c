@@ -18,7 +18,7 @@ int main ( int argc, char * argv[] )
   int option = 0;
   int successful_option_reads, successful_value_reads;
   long to_enqueue, dequeued_value;
-  QueueNodePtr head = NULL;
+  QueueNodePtr head = NULL, tail = NULL;
 
   do {
     showMenu();
@@ -48,12 +48,12 @@ int main ( int argc, char * argv[] )
         }
         else {
           printf("\nEnqueueing %ld into queue...\n", to_enqueue);
-          enqueueItem(&head, (int) to_enqueue); 
+          enqueueItem(&head, &tail, (int) to_enqueue); 
         }
         break;
       
       case DEQUEUE :
-        dequeued_value = dequeueItem(&head);
+        dequeued_value = dequeueItem(&head, &tail);
         /*
         * Enqueuing only allows INTEGERS. Hence if we get +1 above the max integer,
         * Which is what 'dequeueItem' will return incase of an a NULL headPtr,

@@ -13,8 +13,8 @@ struct queueNode {
 typedef struct queueNode QueueNode;
 typedef struct queueNode *QueueNodePtr;
 
-void enqueueItem( QueueNodePtr *headPtr, int value );
-long dequeueItem( QueueNodePtr *headPtr );
+void enqueueItem( QueueNodePtr *headPtr, QueueNodePtr *tailPtr, int value );
+long dequeueItem( QueueNodePtr *headPtr, QueueNodePtr *tailPtr );
 void printQueue( QueueNodePtr currentPtr );
 
 #endif // QUEUE_H

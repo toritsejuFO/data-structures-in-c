@@ -4,7 +4,7 @@
 
 #include "../include/queue.h"
 
-long dequeueItem( QueueNodePtr *headPtr )
+long dequeueItem( QueueNodePtr *headPtr, QueueNodePtr *tailPtr )
 {
   /* Create the node pointer for delete node */
   QueueNodePtr deleteNode = NULL;
@@ -20,6 +20,9 @@ long dequeueItem( QueueNodePtr *headPtr )
     deleteNode = *headPtr;
     *headPtr = (*headPtr)->nextPtr;
     deleteNode->nextPtr = NULL;
+
+    /* Update tail when last node/item is dequeued */
+    if (*headPtr == NULL ) { *tailPtr = NULL; }
 
     /* Store dequeued value into a variable only when it is successfully dequeued */
     long dequeued_value = deleteNode->data;

@@ -3,12 +3,8 @@
 
 #include "../include/queue.h"
 
-void enqueueItem( QueueNodePtr *headPtr, int value )
+void enqueueItem( QueueNodePtr *headPtr, QueueNodePtr *tailPtr, int value )
 {
-  /* Create queue crawler and tracker */
-  QueueNodePtr previousPtr = NULL;
-  QueueNodePtr currentPtr = *headPtr;
-
   /* Create the new node */
   QueueNodePtr newNode = malloc(sizeof(QueueNode));
 
@@ -16,20 +12,17 @@ void enqueueItem( QueueNodePtr *headPtr, int value )
   if ( newNode != NULL ) {
     newNode->data = value;
     newNode->nextPtr = NULL;
-
-    while ( currentPtr != NULL ) {
-      previousPtr = currentPtr;
-      currentPtr = currentPtr->nextPtr;
-    }
     
-    /* CASE 1: Empty queue; Enqueuing first item */
-    if ( previousPtr == NULL && currentPtr == NULL ) {
+    /* CASE 1: Empty queue; Enqueuing first item; Enqueuing at head */
+    if ( *headPtr == NULL ) {
       *headPtr = newNode;
     }
     else { /* CASE 2: Queue with items; Enqueueing at end */
-      previousPtr->nextPtr = newNode;
+      (*tailPtr)->nextPtr = newNode;
     }
-    
+
+    /* Set tail to point to last enqueued node always */
+    *tailPtr = newNode;
     printf("Enqueued\n");
   }
   else {
